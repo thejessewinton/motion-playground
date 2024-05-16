@@ -1,0 +1,11 @@
+.character {
+  --offset-x: calc(var(--x) - 0.5);
+  --abs-x: calc(max(var(--offset-x), -1 * var(--offset-x)));
+  --offset-y: calc(var(--y) - 0.5);
+  --abs-y: calc(max(var(--offset-y), -1 * var(--offset-y)));
+  --l: calc(
+    sin(var(--abs-x) / sin(var(--abs-y) * 3.6) * 3 - var(--t) / 400) * 100%
+  );
+  --h: calc(var(--abs-x) * 365deg);
+  color: hsl(var(--h) 50% max(var(--l), 6%));
+}

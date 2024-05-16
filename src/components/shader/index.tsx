@@ -1,4 +1,6 @@
-'use client';
+// initial inspiration borrowed from https://svelte.dev/repl/f16e934ff95f409fbcebb254e9df46ba?version=4.2.17
+
+import '~/components/shader/shader.css';
 
 import { CSSProperties } from 'react';
 
@@ -7,7 +9,7 @@ export const Shader = () => {
   const n = 800;
   const rows = Math.ceil(n / cols);
 
-  const word = 'verse.';
+  const word = 'appwrite.';
 
   return (
     <div
@@ -21,7 +23,7 @@ export const Shader = () => {
       {Array.from({ length: n }).map((_, i) => {
         return (
           <div
-            className="shader"
+            className="character"
             key={i}
             style={
               {
@@ -30,7 +32,7 @@ export const Shader = () => {
               } as CSSProperties
             }
           >
-            {word.split('')[i % 6]}
+            {word.split('')[i % word.length]}
           </div>
         );
       })}
