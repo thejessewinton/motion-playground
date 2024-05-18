@@ -65,7 +65,7 @@ export const Switchboard = () => {
   return (
     <div
       ref={ref}
-      className="w-[340px] h-[100px]"
+      className="w-[340px] h-[100px] bg-neutral-900 p-4"
       style={{
         display: 'grid',
         gap: `${columns}px`,
